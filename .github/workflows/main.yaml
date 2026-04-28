@@ -29,7 +29,9 @@ jobs:
     - name: checkout the code
       uses: actions/checkout@v2
     - name: setup docker
-      uses: docker-practice/actions-setup-docker@v1
+      uses: docker/setup-docker-action@v5.1.0
+      with: 
+        version: latest
     - name: build image
       run: docker build -f Dockerfile -t pygoat:latest .
     - name: using docker scout to scan the image
@@ -39,4 +41,3 @@ jobs:
         sh install-scout.sh
         docker scout quickview
         docker scout cves
-      
