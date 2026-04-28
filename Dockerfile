@@ -10,6 +10,10 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     dnsutils \
     libpq-dev \
     python3-dev \
+    gcc \
+    build-essential \
+    libffi-dev \
+    libssl-dev \
  && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set environment variables
